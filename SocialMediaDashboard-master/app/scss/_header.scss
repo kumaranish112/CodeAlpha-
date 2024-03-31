@@ -1,0 +1,145 @@
+
+.header {
+  min-height: 14.6875rem;
+  border-radius: 0 0 1.5625rem 1.5625rem;
+  background-color: $veryPaleBlue;
+
+  & > * {
+    width: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-up(mobile) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    line-height: 1.4;
+  }
+
+  &__title {
+    font-weight: 700;
+    color: $veryDarkBlue;
+
+    @include breakpoint-down(medium) {
+      font-size: 1.125rem;
+      max-width: 16.25rem;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: .875rem;
+    color: $darkGrayishBlue;
+
+    @include breakpoint-down(medium) {
+      margin-top: 5px;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: .0625rem;
+    margin: 1.25rem 0;
+    background-color: $toggleBackground;
+  }
+
+  &__toggle {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint-up(mobile) {
+      line-height: 2.5;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      label {
+        margin-right: .9375rem;
+      }
+    }
+
+    &__input {
+      border: none;
+      cursor: pointer;
+      width: 3.125rem;
+      height: 1.5625rem;
+      background: none;
+      visibility: hidden;
+      position: relative;
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        visibility: visible;
+        border-radius: 2.5rem;
+      }
+
+      &::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .2s ease-in-out;
+        background: $toggleBackground linear-gradient(to right, $toggleBackground, $toggleBackground);
+      }
+
+      &::after {
+        left: .25rem;
+        top: .1875rem;
+        width: 1.25rem;
+        background-color: $white;
+        height: calc(100% - .375rem);
+        transition: all .2s ease-in-out;
+        box-shadow: inset -0.125rem -0.125rem .1875rem gainsboro;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: bold;
+    font-size: .875rem;
+    color: $darkGrayishBlue;
+
+    display: flex;
+    align-items: center;
+
+    @include breakpoint-down(medium) {
+      font-size: .75rem;
+    }
+  }
+}
+
+body.dark .header {
+  &__title {
+    color: $white;
+  }
+
+  &__divider {
+    background-color: $darkGrayishBlue;
+  }
+
+  &__toggle__input {
+    &::after {
+      transform: translateX(1.375rem);
+      background-color: $veryDarkBackgroundBlue;
+      box-shadow: inset -0.125rem -0.125rem .1875rem $darkGrayishBlue;
+    }
+
+    &::before {
+      background: $toggleGradient1 linear-gradient(to right, $toggleGradient1, $toggleGradient2);
+    }
+  }
+}

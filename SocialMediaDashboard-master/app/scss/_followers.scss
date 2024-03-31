@@ -1,0 +1,165 @@
+
+.followers {
+  // background-color: rgba(255, 0, 0, .2);
+  @extend %translateY;
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @include breakpoint-up(medium) {
+      display: grid;
+      grid-gap: 1.5625rem;
+      grid-template-columns: repeat(2, minmax(14.0625rem, 1fr));
+    }
+    
+    @include breakpoint-up(desktop) {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(14.0625rem, 1fr));
+    }
+  }
+
+  &__topBorder {
+    width: 100%;
+    height: .25rem;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+  }
+
+  &__gridItem {
+    cursor: pointer;
+    padding: .625rem;
+    overflow: hidden;
+    height: 13.4375rem;
+    position: relative;
+    border-radius: .3125rem;
+    transition: all .2s ease-in-out;
+    background-color: $lightGrayishBlue;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    box-shadow: 0 1px 10px $lightGrayishBlue;
+
+    &:hover {
+      filter: brightness(95%);
+    }
+
+    @each $rede in map-keys($webs) {
+      $colourMap: map-get($webs, $rede);
+
+      &.#{$rede} .followers__topBorder {
+        @if length($colourMap) > 1 {
+          background-image: linear-gradient(
+            to right, $colourMap
+          );
+        } @else {
+          background-color: $colourMap;
+        }
+      }
+    }
+
+
+    @include breakpoint-down(medium) {
+      min-width: 100%;
+
+      &:not(:first-child) {
+        margin-top: 1.25rem;
+      }
+    }
+
+    @include breakpoint-up(medium) {
+      flex: 0 calc(16rem - .625rem);
+    }
+
+    @include breakpoint-up(desktop) {
+      flex: 0 calc(16rem - 1.875rem);
+    }
+  }
+
+  &__author {
+    line-height: 1;
+    padding: .1875rem .3125rem;
+    @extend %flex-jcsb-c;
+
+    img {
+      margin-right: .625rem;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: .75rem;
+      color: $darkGrayishBlue;
+    }
+  }
+
+  &__count {
+    text-align: center;
+  }
+
+  &__counter {
+    display: block;
+    font-size: 3.4375rem;
+    color: $veryDarkBackgroundBlue;
+  }
+
+  &__text {
+    font-size: .8125rem;
+    color: $darkGrayishBlue;
+    letter-spacing: .3125rem;
+    text-transform: uppercase;
+  }
+
+  &__grow {
+    display: block;
+    font-size: .75rem;
+    font-weight: 700;
+    position: relative;
+    padding: .3125rem .625rem;
+
+    &::before {
+      content: '';
+      top: 0px;
+      left: 0px;
+      width: .625rem;
+      height: .625rem;
+      display: inline-block;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateX(-.3125rem);
+    }
+  }
+
+}
+
+
+body.dark {
+  .followers {
+    &__gridItem {
+      background-color: $backgroundItems;
+      box-shadow: 0 1px 10px $veryDarkBlue;
+
+      &:hover {
+        filter: brightness(110%);
+      }
+    }
+
+    &__author span {
+      color: $desaturatedBlue;
+    }
+
+    &__counter {
+      color: $white;
+    }
+
+    &__text {
+      color: $desaturatedBlue;
+    }
+  }
+}
+

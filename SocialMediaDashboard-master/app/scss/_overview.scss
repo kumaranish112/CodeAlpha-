@@ -1,0 +1,123 @@
+
+.overview {
+  @extend %translateY;
+
+  &__items {
+  }
+
+  &__title {
+    font-weight: 700;
+    padding: .625rem 0;
+    margin-bottom: 1.875rem;
+    color: $darkGrayishBlue;
+
+    @include breakpoint-down(medium) {
+      font-size: 1.125rem;
+      max-width: 16.25rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-gap: .9375rem 0;
+    grid-template-columns: minmax(14.0625rem, 1fr);
+
+    
+    @include breakpoint-up(medium) {
+      grid-gap: 1.5625rem;
+      grid-template-columns: repeat(2, minmax(14.0625rem, 1fr));
+    }
+
+    @include breakpoint-up(desktop) {
+      grid-gap: 1.25rem 1.5625rem;
+      grid-template-columns: repeat(4, minmax(14.0625rem, 1fr));
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    overflow: hidden;
+    @extend %flex-jcsb-c;
+    min-height: 7.8125rem;
+    flex-direction: column;
+    border-radius: .3125rem;
+    padding: 1.25rem 1.5625rem;
+    transition: all .2s ease-in-out;
+    background-color: $lightGrayishBlue;
+    box-shadow: 0 1px 10px $lightGrayishBlue;
+
+    & > * {
+      width: 100%;
+      @extend %flex-jcsb-c;
+    }
+
+    &:hover {
+      filter: brightness(95%);
+    }
+  }
+
+  &__itemTitle {
+    font-weight: 600;
+    font-size: .8125rem;
+    color: $darkGrayishBlue;
+  }
+
+  &__growth {
+    align-items: flex-end;
+  }
+
+  &__realGrowth {
+    font-weight: bold;
+    font-size: 1.875rem;
+  }
+
+  &__percentGrowth {
+    font-weight: 600;
+    font-size: .75rem;
+    position: relative;
+    padding: .3125rem .125rem;
+    
+    &::before {
+      content: '';
+      top: 0px;
+      left: 0px;
+      width: .625rem;
+      height: .625rem;
+      position: absolute;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translate(-.6875rem, 75%);
+    }
+
+    &::after {
+      content: '%';
+    }
+  }
+}
+
+
+body.dark {
+  .overview {
+    &__item {
+      background-color: $backgroundItems;
+      box-shadow: 0 1px 10px $veryDarkBlue;
+
+      &:hover {
+        filter: brightness(105%);
+      }
+    }
+
+    &__title {
+      color: $white;
+    }
+
+    &__itemTitle {
+      color: $desaturatedBlue;
+    }
+
+    &__realGrowth {
+      color: $white;
+    }
+  }
+}

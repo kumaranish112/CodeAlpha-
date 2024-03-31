@@ -1,0 +1,93 @@
+html {
+
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: $white;
+  font-family: "Inter", sans-serif;
+
+  .overview,
+  .followers {
+    $beforeItens: ( 'grownUp': ($limeGreen, 'up'), 'decreased': ($brightRed, 'down') );
+
+    @each $className in map-keys($beforeItens) {
+      $values: map-get($beforeItens, $className);
+
+      & .#{$className} {
+        color: nth($values, 1);
+            
+        &::before {
+          background-image: url('../../images/icon-#{nth($values, 2)}.svg');
+        }
+      }
+    }
+  }
+
+  &.dark {
+    background-color: $veryDarkBlue;
+
+    .header {
+      background-color: $veryDarkBackgroundBlue;
+
+      &__title {
+        color: $white;
+      }
+    }
+  }
+}
+
+%flex-jcc-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-jcsb-c {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-jcse-c {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 69.375rem;
+
+  @include breakpoint-down(mobile) {
+    padding: 2.5rem 1.5625rem;
+  }
+
+  @include breakpoint-up(mobile) {
+    padding: 1.71875rem 3.4375rem;
+  }
+}
+
+.desktop-only {
+  @include breakpoint-down(desktop) {
+    display: none;
+  }
+}
+
+.mobile-only {
+  @include breakpoint-up(mobile) {
+    display: none;
+  }
+}
+
+%translateY {
+  transform: translateY(-4.6875rem);
+
+  @include breakpoint-up(mobile) {
+    transform: translateY(-6.875rem);
+  }
+
+  @include breakpoint-up(medium) {
+    transform: translateY(-8.75rem);
+  }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Frontend Mentor | Social Media Dashboard</title>
+    <link rel="stylesheet" href="./app/scss/styles.css" />
+  </head>
+  <body>
+
+    <header class="header">
+      <nav class="container header__nav">
+        <div class="header__text">
+          <h1 class="header__title">
+            Social Media Dashboard
+          </h1>
+          <span class="header__subtitle">
+            Total Followers: 40,499
+          </span>
+        </div>
+
+        <div class="header__divider mobile-only"></div>
+
+        <div class="header__toggle">
+          <label for="themetoggle" class="header__label">Dark Mode</label>
+          <input type="checkbox" name="themetoggle" id="themetoggle" checked="checked" class="header__toggle__input" />
+        </div>
+      </nav>
+    </header>
+
+    <section class="followers">
+      <div class="container followers__items">
+        <div class="followers__gridItem facebook">
+          <div class="followers__topBorder"></div>
+          <div class="followers__author">
+            <img src="./images/icon-facebook.svg" alt="Twitter" class="followers__socialIcon" />
+            <span class="followers__socialLink">
+              @anishKumar
+            </span>
+          </div>
+          
+          <div class="followers__count">
+            <h2 class="followers__counter">729</h2>
+            
+            <p class="followers__text">followers</p>
+          </div>
+
+
+          <span class="followers__grow grownUp">12 Today</span>
+        </div>
+
+        <div class="followers__gridItem twitter">
+          <div class="followers__topBorder"></div>
+          <div class="followers__author">
+            <img src="./images/icon-twitter.svg" alt="Twitter" class="followers__socialIcon" />
+            <span class="followers__socialLink">
+              @Anish
+            </span>
+          </div>
+
+          <div class="followers__count">
+            <h2 class="followers__counter">44</h2>
+            
+            <p class="followers__text">followers</p>
+          </div>
+
+          <span class="followers__grow grownUp">99 Today</span>
+        </div>
+
+        <div class="followers__gridItem instagram">
+          <div class="followers__topBorder"></div>
+          <div class="followers__author">
+            <img src="./images/icon-instagram.svg" alt="Twitter" class="followers__socialIcon" />
+            <span class="followers__socialLink">
+              @anish
+            </span>
+          </div>
+
+          <div class="followers__count">
+            <h2 class="followers__counter">5732</h2>
+            
+            <p class="followers__text">followers</p>
+          </div>
+
+          <span class="followers__grow grownUp">120 Today</span>
+        </div>
+
+        <div class="followers__gridItem youtube">
+          <div class="followers__topBorder"></div>
+          <div class="followers__author">
+            <img src="./images/icon-youtube.svg" alt="Twitter" class="followers__socialIcon" />
+            <span class="followers__socialLink">
+              Ani.
+            </span>
+          </div>
+
+          <div class="followers__count">
+            <h2 class="followers__counter">16K</h2>
+            
+            <p class="followers__text">subscribers</p>
+          </div>
+
+          <span class="followers__grow decreased">280 Today</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="container overview__items">
+        <h1 class="overview__title">Overview - Today</h1>
+
+        <div class="overview__grid">
+          <!-- Facebook -->
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Page Views</span>
+              <img src="./images/icon-facebook.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">297</h2>
+              <span class="overview__percentGrowth grownUp">3</span>
+            </div>
+          </div>
+
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Likes</span>
+              <img src="./images/icon-facebook.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">52K</h2>
+              <span class="overview__percentGrowth decreased">2</span>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Likes</span>
+              <img src="./images/icon-instagram.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">12K</h2>
+              <span class="overview__percentGrowth grownUp">2237</span>
+            </div>
+          </div>
+
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Profile Views</span>
+              <img src="./images/icon-instagram.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">521</h2>
+              <span class="overview__percentGrowth grownUp">295</span>
+            </div>
+          </div>
+
+          <!-- Twitter -->
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Retweets</span>
+              <img src="./images/icon-twitter.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">1117</h2>
+              <span class="overview__percentGrowth grownUp">3303</span>
+            </div>
+          </div>
+
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Likes</span>
+              <img src="./images/icon-twitter.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">507</h2>
+              <span class="overview__percentGrowth grownUp">991</span>
+            </div>
+          </div>
+
+          <!-- YouTube -->
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Likes</span>
+              <img src="./images/icon-youtube.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">1121</h2>
+              <span class="overview__percentGrowth decreased">12K</span>
+            </div>
+          </div>
+
+          <div class="overview__item">
+            <div class="overview__viewType">
+              <span class="overview__itemTitle">Total Views</span>
+              <img src="./images/icon-youtube.svg" alt="" class="overview__itemIcon" />
+            </div>
+            <div class="overview__growth">
+              <h2 class="overview__realGrowth">127</h2>
+              <span class="overview__percentGrowth decreased">122</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="./app/js/index.js"></script>
+  </body>
+</html>
