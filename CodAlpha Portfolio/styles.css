@@ -1,0 +1,246 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--primary-color);
+}
+
+
+:root {
+  --primary-color: #edf2fc;
+  --secondary-color: #212121;
+
+
+  /* --primary-color: #000106;
+  --secondary-color: #fff; */
+}
+
+.dark-theme {
+  --primary-color: #1D1B26;
+  --secondary-color: #fff;
+}
+
+nav {
+  background-color: var(--primary-color);
+  text-align: center;
+  position: fixed;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  z-index: 998;
+}
+
+#icon {
+  width: 30px;
+  cursor: pointer;
+}
+
+
+.logo a {
+  font-family: "Rubik Gemstones", system-ui;
+  font-weight: 300;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+nav ul {
+  /* list-style-type: none; */
+
+  margin: 0;
+  padding: 0;
+  display: flex;
+  right: 10px;
+  /* justify-content: right; */
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+nav a {
+  font-weight: 900;
+  text-decoration: none;
+  padding: 10px 20px;
+  /* transition: background-color 0.3s; */
+}
+nav a:hover {
+  color: rgb(255, 17, 0);
+  transition: 0.5s ease-in;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(221, 0, 255),
+    0 0 15px rgb(191, 0, 255),
+    0 0 5px cyan;
+}
+
+header {
+  /* background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0)); */
+  background: var(--primary-color);
+  text-align: center;
+  padding: 50px 0;
+}
+
+header .text-three h3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+
+header .text-three span {
+  font-size: 40px;
+  margin: 5px 0;
+  color: rgb(249, 0, 0);
+}
+
+#about {
+  top: 60px;
+  /* background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0)); */
+  background: var(--primary-color);
+  /* color: var(--secondary-color); */
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-image {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text {
+  max-width: 60%;
+  text-align: justify;
+}
+
+
+section {
+  padding: 30px 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  /* background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0)); */
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+h2 span {
+  color: rgb(212, 0, 255);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.education-record,
+.experience-record {
+  margin-bottom: 20px;
+}
+
+.skill {
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  /* background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0)); */
+  
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+}
+.skill{
+  background: var(--primary-color);
+}
+.project {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.project a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+#contact p, a{
+  color: #3498db;
+}
+
+p a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+p a:hover {
+  text-decoration: none;
+}
+
+footer {
+  /* background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0)); */
+  background: var(--primary-color);
+  text-align: center;
+  padding: 20px 0;
+  /* color: rgb(249, 3, 212); */
+}
+
+.curved-box {
+  padding: 15px;
+  border-radius: 10px;
+  /* background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0)); */
+  background: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* FOR DARK MODE */
+
+.curved-box {
+  color: var(--secondary-color);
+}
+
+footer {
+  color: var(--secondary-color);
+}
+
+h2 {
+  color: var(--secondary-color);
+}
+
+.about-text {
+  color: var(--secondary-color);
+}
+
+header .text-three h3 {
+  color: var(--secondary-color);
+}
+header{
+  color: var(--secondary-color);
+}
+.project h3,p{
+  color: var(--secondary-color);
+}
+.nav a{
+  color: var(--secondary-color);
+}
+.logo a{
+  color: var(--secondary-color);
+}
+.skill{
+  color: var(--secondary-color);
+}
